@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+<div class="user-login-form py-5">
+
+  <div class="container">
+
+    <div class="form-content">
+
+      <div class="row no-gutters">
+
+      <div class="col-12 col-md-4 no-gutters">
+        <div class="welcome">
+            <h2 class="p-4 p-md-0">Welcome Back</h2>
+        </div>{# ./welcome #}
+      </div>{# ./col-md-4 #}
+
+      <div class="col-12 col-md-8 no-gutters">
+        <form{{ attributes }}>
+          <h2>Login</h2>
+          {{ children }}
+        </form>
+        <div class="links">
+          <a href="/user/register">Already have an account?</a>
+          <a href="/user/password">Forgot password</a>
+        </div>
+      </div>{# ./col-md-8 #}
+
+    </div>{# ./row #}
+
+    </div>{# ./form-wrapper #}
+
+  </div>{# ./container #}
+
+</div>{# ./user-login-form #}
+

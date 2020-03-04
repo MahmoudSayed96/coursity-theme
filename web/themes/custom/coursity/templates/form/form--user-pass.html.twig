@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+<div class="user-pass-form py-5">
+
+  <div class="container">
+
+    <div class="form-content">
+
+      <div class="row no-gutters">
+      <div class="col-12 col-md-6 no-gutters mx-auto">
+        <form{{ attributes }}>
+          <h2>Reset Password</h2>
+          {{ children }}
+        </form>
+      </div>{# ./col-md-8 #}
+
+    </div>{# ./row #}
+
+    </div>{# ./form-wrapper #}
+
+  </div>{# ./container #}
+
+</div>{# ./user-pass-form #}
+

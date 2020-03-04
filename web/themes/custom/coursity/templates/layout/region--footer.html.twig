@@ -1,0 +1,39 @@
+{# {% if page.footer %}
+  <footer role="contentinfo" class="main-footer py-3 mt-3">
+    <div class="container">
+      {{ page.footer }}
+    </div>
+  </footer>
+{% endif %} #}
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{% if content %}
+  {{ content }}
+{% endif %}
+{# {{ kint(content) }} #}
+{# {% if content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">{{ page.footer.footerleftmenu }}<hr class="d-block d-md-none"></div>
+      <div class="col-md-3">{{ page.footer.footerhelpermenu }}<hr class="d-block d-md-none"></div>
+      <div class="col-md-3">{{ page.footer.footersocialmenu }}</div>
+    </div>
+    <hr>
+  </div>
+  <div class="mt-3">
+    {{ page.footer.coursity_powered }}
+  </div>
+{% endif %} #}
+
