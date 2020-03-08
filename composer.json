@@ -16,13 +16,15 @@
     ],
     "require": {
         "composer/installers": "^1.2",
+        "drupal/bamboo_twig": "^4.1",
         "drupal/contact_block": "^1.4",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/devel": "^2.1",
         "drupal/pathauto": "^1.6",
-        "drupal/video_embed_field": "^2.2"
+        "drupal/video_embed_field": "^2.2",
+        "twig/extensions": "^1.5"
     },
     "require-dev": {
     },

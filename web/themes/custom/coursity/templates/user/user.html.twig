@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+<article{{ attributes.addClass('user-profile') }}>
+  {% if content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mx-auto my-5">
+
+          <div class="card h-100">
+            <img src="{{ content.field_profile_background|render|striptags|trim }}" class="card-img-top">
+            <div class="card-body">
+              <div class="user-photo">
+                {{ content.user_picture }}
+              </div>
+              <h5 class="card-title user-name">{{ user.getDisplayName() }}</h5>
+              <p class="card-text user-bio"><small>{{ content.field_user_bio|render|striptags|trim }}</small></p>
+              <div class="user-contact-info">
+                <div class="user-location">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <strong>{{ user.getTimeZone() }}</strong>
+                </div>
+                <div class="user-email">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <strong>{{ user.getEmail() }}</strong>
+                </div>
+              </div>
+            </div>
+          </img>{# ./card #}
+
+          </div>{# ./col-md-6 #}
+      </div>{# ./row #}
+    </div>{# ./container #}
+    {# {{- content -}} #}
+  {% endif %}
+</article>
+

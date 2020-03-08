@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+<div class="user-edit-form py-5">
+
+  <div class="container">
+
+    <div class="form-content">
+
+      <div class="row no-gutters">
+
+      <div class="col-12 col-md-8 no-gutters">
+        <form{{ attributes }}>
+          <h2>Edit User Profile</h2>
+          {{ children }}
+        </form>
+      </div>{# ./col-md-8 #}
+
+    </div>{# ./row #}
+
+    </div>{# ./form-wrapper #}
+
+  </div>{# ./container #}
+
+</div>{# ./user-login-form #}
+

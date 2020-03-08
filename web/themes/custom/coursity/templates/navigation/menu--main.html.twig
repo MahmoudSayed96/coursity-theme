@@ -40,12 +40,12 @@
     {% for item in items %}
 
       {% if menu_level == 0 and item.is_expanded %}
-        <li{{ item.attributes.addClass('nav-item dropdown') }}>
+        <li{{ item.attributes.addClass('nav-item dropdown') }} data-url="{{ item.url }}">
           <a class="nav-link dropdown-toggle" href="{{ item.url }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ item.title }}
           </a>
       {% elseif menu_level == 0 %}
-        <li{{ item.attributes.addClass('nav-item') }}>
+        <li{{ item.attributes.addClass('nav-item') }} data-url="{{ item.url }}">
           <a class="nav-link" href="{{ item.url }}">{{ item.title }}</a>
       {% else %}
         <a class="dropdown-item" href="{{ item.url }}">{{ item.title }}</a>

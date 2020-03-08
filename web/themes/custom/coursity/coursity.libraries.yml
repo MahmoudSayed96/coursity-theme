@@ -5,12 +5,14 @@ global-css:
         css/font-awesome.min.css: {}
         plugins/owlcarousel/css/owl.carousel.min.css: {}
         plugins/owlcarousel/css/owl.theme.default.min.css: {}
+        css/animate.css: {}
         css/style.css: {}
 global-js:
   js:
     # js/jquery-3.4.1.min.js: {}
     js/bootstrap.min.js: {}
     plugins/owlcarousel/owl.carousel.min.js: {}
+    js/wow.min.js: {}
     js/main.js: {}
   dependencies:
     - core/jquery

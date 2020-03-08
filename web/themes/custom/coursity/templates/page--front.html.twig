@@ -56,14 +56,14 @@
             <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
             <div class="layout-content">
-              <div class="container">{{ page.content }}</div>
+              {{ page.content }}
             </div>{# /.layout-content #}
 
           </div>{# /.col-md-8 #}
           <div class="col-md-4">
 
             <aside class="layout-sidebar-second" role="complementary">
-              <div class="container">{{ page.sidebar }}</div>
+              {{ page.sidebar }}
             </aside>{# ./aside #}
 
           </div>{# ./col-md-4 #}
@@ -73,7 +73,7 @@
             <div class="col-md-12">
               <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
               <div class="layout-content">
-                <div class="container">{{ page.content }}</div>
+                {{ page.content }}
               </div>{# /.layout-content #}
             </div>{# /.col-md-8 #}
         </div>{# /.row #}

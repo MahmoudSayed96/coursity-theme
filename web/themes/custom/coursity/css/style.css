@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
 /* ====================== Admin toolbar ===================== */
 
@@ -9,11 +9,9 @@
 
 /* ====================================================== */
 
-
-/* .layout-container {
-    position: relative;
-    min-height: 100vh;
-} */
+.layout-container {
+    margin: 0;
+}
 
 .layout-content {
     /* min-height: 55vh; */
@@ -36,15 +34,15 @@ body {
     height: 100%;
     padding: 0;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
 }
 
 body {
     position: relative;
     /* padding-top: 100px; */
-    background: #f7f7f7;
-    font-family: 'Raleway', sans-serif;
+    /* background: #F8F8F8; */
+    background: #e9eaea;
 }
 
 img {
@@ -131,8 +129,8 @@ img {
     height: 50px;
 }
 
-.navbar {
-    z-index: 10 !important;
+.navbar.fixed-top {
+    top: auto !important;
 }
 
 .navbar.scroll {
@@ -163,6 +161,7 @@ img {
 .navbar-light .navbar-nav .show>.nav-link {
     background: var(--main-color);
     color: #fff !important;
+    padding-left: 1rem;
 }
 
 .navbar-toggler {
@@ -454,7 +453,7 @@ img {
     padding: 5px 10px;
     border: 2px solid #dee2e6;
     border-radius: 15px;
-    margin: 0 5px;
+    margin: 5px;
     cursor: pointer;
     transition: all .3s ease-in-out;
     /* max-width: fit-content; */
@@ -482,8 +481,13 @@ img {
     color: #fff;
 }
 
+.video .card-body i {
+    margin-top: 20px !important;
+}
+
 .video .video__date {
     margin-left: 5px;
+    margin-top: 1rem;
 }
 
 
@@ -599,7 +603,7 @@ img {
     color: #fff;
 }
 
-#contact-container .contact-form input[id="edit-preview--2"] {
+#contact-container .contact-form input[data-drupal-selector="edit-preview"] {
     display: none;
 }
 
@@ -683,6 +687,10 @@ img {
     /* border: 1px solid #369; */
 }
 
+.user-register-form form input[id='edit-submit'] {
+    margin-top: .5rem;
+}
+
 
 /* ==================   User Reset Password Form ====================== */
 
@@ -692,6 +700,96 @@ img {
     padding: 3rem 3rem 3rem 3rem;
     box-shadow: 0 0 10px #369;
     border-radius: 10px;
+}
+
+
+/* ==================   User Edit Form ====================== */
+
+.user-edit-form {
+    color: #369;
+}
+
+
+/* ====================================================== */
+
+
+/* =================== Menu Local Tasks ================== */
+
+#block-coursity-local-tasks {
+    background: #c5e3f6;
+}
+
+#block-coursity-local-tasks #primary-menu-local-tasks {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#block-coursity-local-tasks #primary-menu-local-tasks li {
+    margin: .4rem;
+    border: 2px solid #ddd;
+    padding: .4rem 1rem;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: .3s;
+}
+
+#block-coursity-local-tasks #primary-menu-local-tasks li:hover {
+    background: #369;
+}
+
+#block-coursity-local-tasks #primary-menu-local-tasks li:hover a {
+    color: #fff;
+}
+
+#block-coursity-local-tasks #primary-menu-local-tasks li a {
+    text-decoration: none;
+    color: #336699;
+}
+
+
+/* ====================================================== */
+
+
+/* ================= User Profile ======================== */
+
+.user-profile .card {
+    box-shadow: 0 0 15px #a8afb5
+}
+
+.user-profile .card-body {
+    position: relative;
+    padding-top: 4rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+    /* color: #3b5998; */
+    color: #4F616F;
+}
+
+.user-profile .user-photo {
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+.user-profile .user-photo img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 5px #4F616F;
+}
+
+.user-profile .user-name {
+    margin-bottom: 0 !important;
+}
+
+.user-profile .user-contact-info {
+    display: flex;
+    justify-content: space-around;
 }
 
 
@@ -748,6 +846,14 @@ img {
     background: url('../images/website-development.gif') no-repeat;
     width: 100vw;
     height: 100vh;
+}
+
+
+/* ====================== Ooops ====================== */
+
+.oops h2 {
+    color: var(--main-color);
+    font-size: 5rem;
 }
 
 

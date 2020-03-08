@@ -1,19 +1,37 @@
 $ = jQuery;
 $(document).ready(function() {
     console.log('Jquery Run....');
+
+    // WOW animation
+    // new WOW().init();
+
     // Make Sticky navbar
     $(window).on('scroll', function() {
-        let screenTop = $(this).scrollTop();
+        var screenTop = $(this).scrollTop();
+        console.log(screenTop);
         if (screenTop >= 100) {
             $('.navbar').addClass('scroll');
         } else {
             $('.navbar').removeClass('scroll');
         }
     });
+
+
     // Navbar links activation
     $(".navbar .navbar-nav .nav-item").on('click', function() {
-        $(this).addClass('active').siblings().removeClass('active');
+        // Store url path in local storage
+        var route = $(this).data('url');
+        localStorage.setItem('activeRoute', route);
     });
+
+
+    // Add active class to menu link
+    var activeRoute = localStorage.getItem('activeRoute');
+    if (activeRoute === '/') {
+        $('nav a[href="' + activeRoute + '"]').parent().addClass('active');
+    } else {
+        $('nav a[href^="' + activeRoute + '"]').parent().addClass('active');
+    }
 
     // OWL Slider
     $('.owl-carousel').owlCarousel({
@@ -39,7 +57,8 @@ $(document).ready(function() {
 
     // FAQ Accordion
     $('#FAQAccordion .card-header button').on('click', function(e) {
-        $(this).toggleClass('open');
+        $(this).addClass('open').siblings().removeClass('open');
+        // $(this).toggleClass('open');
         $('#FAQAccordion .open .fa').toggleClass('fa-chevron-up fa-chevron-down');
     });
     // collapse accordion
@@ -49,15 +68,29 @@ $(document).ready(function() {
 
     // Contact form
     $('.contact-form .form-item').addClass('form-group');
-    $('.contact-form input,.contact-form textarea').addClass('form-control');
+    $('.contact-form input').addClass('form-control');
+    $('.contact-form textarea').addClass('form-control');
+    $('.contact-form input[type="checkbox"]').removeClass('form-control');
 
     // Login form
     $('.user-login-form .form-item').addClass('form-group');
-    $('.user-login-form input,.contact-form textarea').addClass('form-control');
+    $('.user-login-form input').addClass('form-control');
 
     // Register form
     $('.user-register-form .form-item').addClass('form-group');
-    $('.user-register-form input,.contact-form textarea ,select').addClass('form-control');
+    $('.user-register-form input').addClass('form-control');
+    $('.user-register-form textarea').addClass('form-control');
+    $('.user-register-form select').addClass('form-control');
     $('.user-register-form input[type="checkbox"]').removeClass('form-control');
+
+    // Reset Password
     $('.user-pass-form input').addClass('form-control');
+
+    // User Edit form
+    $('.user-edit-form .form-item').addClass('form-group');
+    $('.user-edit-form input, textarea ,select').addClass('form-control');
+    $('.user-edit-form input[type="checkbox"]').removeClass('form-control');
+    $('.user-edit-form input[id="edit-submit"]').addClass('btn btn-success').removeClass('form-control');
+    $('.user-edit-form input[value="Remove"]').addClass('btn btn-danger').removeClass('form-control');
+    $('.user-edit-form img').addClass('img-thumbnail');
 });
