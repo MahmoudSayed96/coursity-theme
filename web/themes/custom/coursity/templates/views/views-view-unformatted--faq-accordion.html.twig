@@ -20,15 +20,17 @@
 {% endif %}
 <div class="container">
   <div id="faq-section" class="py-5 px-4 my-5">
-    {% for row in rows %}
-      {%
-        set row_classes = [
-          default_row_class ? 'views-row',
-        ]
-      %}
-      <div{{ row.attributes.addClass(row_classes) }}>
-        {{- row.content -}}
-      </div>
-    {% endfor %}
+    <div class="accordion" id="FAQAccordion">
+      {% for row in rows %}
+        {%
+          set row_classes = [
+            default_row_class ? 'views-row',
+          ]
+        %}
+        <div{{ row.attributes.addClass(row_classes) }}>
+          {{- row.content -}}
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>

@@ -161,7 +161,9 @@ img {
 .navbar-light .navbar-nav .show>.nav-link {
     background: var(--main-color);
     color: #fff !important;
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
+    padding-left: .5rem;
+    padding-right: .5rem;
 }
 
 .navbar-toggler {
@@ -528,8 +530,17 @@ img {
     font-size: 1.4rem;
 }
 
-#FAQAccordion button .fa {
+
+/* Change Icons In FAQ  */
+
+#FAQAccordion .btn-link::after {
+    content: '\f078';
+    font-family: 'FontAwesome';
     float: right;
+}
+
+#FAQAccordion .btn-link[aria-expanded="true"]::after {
+    content: '\f077';
 }
 
 

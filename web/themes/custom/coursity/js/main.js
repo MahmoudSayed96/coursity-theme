@@ -1,6 +1,8 @@
 $ = jQuery;
 $(document).ready(function() {
     console.log('Jquery Run....');
+    // Store / Change url path in local storage
+    storeUrl();
 
     // WOW animation
     // new WOW().init();
@@ -20,7 +22,7 @@ $(document).ready(function() {
     // Navbar links activation
     $(".navbar .navbar-nav .nav-item").on('click', function() {
         // Store url path in local storage
-        var route = $(this).data('url');
+        var route = $(window).data('url');
         localStorage.setItem('activeRoute', route);
     });
 
@@ -55,16 +57,6 @@ $(document).ready(function() {
         }
     });
 
-    // FAQ Accordion
-    $('#FAQAccordion .card-header button').on('click', function(e) {
-        $(this).addClass('open').siblings().removeClass('open');
-        // $(this).toggleClass('open');
-        $('#FAQAccordion .open .fa').toggleClass('fa-chevron-up fa-chevron-down');
-    });
-    // collapse accordion
-    $('.collapse').on('show.bs.collapse', function(e) {
-        $('.collapse').collapse("hide")
-    });
 
     // Contact form
     $('.contact-form .form-item').addClass('form-group');
@@ -94,3 +86,14 @@ $(document).ready(function() {
     $('.user-edit-form input[value="Remove"]').addClass('btn btn-danger').removeClass('form-control');
     $('.user-edit-form img').addClass('img-thumbnail');
 });
+
+/**
+ * Store active route in local storage for using in activate navbar links
+ *
+ * @return void
+ */
+function storeUrl() {
+    var route = $(location).attr('href').split('/')[3];
+    route = (route === '') ? '/' : '/' + route;
+    localStorage.setItem('activeRoute', route);
+}
